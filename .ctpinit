@@ -1,0 +1,9 @@
+ctp_path_prepend() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="$1${PATH:+":$PATH"}"
+    fi
+}
+
+ctp_path_prepend ./node_modules/.bin
+
+unset -f ctp_path_prepend
