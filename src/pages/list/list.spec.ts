@@ -4,7 +4,7 @@ import { DebugElement }    from '@angular/core';
 
 import {ListPage} from './list';
 import {IonicModule, NavController, NavParams, Platform} from 'ionic-angular';
-import {NavParamsMock, PlatformMock} from '../../../test-config/mocks-ionic';
+import {NavParamsMock, PlatformMock} from '../../../test/unit-config/mocks-ionic';
 
 describe('ListPage template', () => {
 

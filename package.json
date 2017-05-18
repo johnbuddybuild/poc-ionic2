@@ -46,7 +46,9 @@
     "@types/jasmine": "2.5.47",
     "@types/node": "7.0.18",
     "angular2-template-loader": "0.6.2",
+    "appium": "1.6.4",
     "cordova": "7.0.1",
+    "cucumber": "2.1.0",
     "html-loader": "0.4.5",
     "ionic": "3.0.0",
     "istanbul-instrumenter-loader": "2.0.0",
@@ -59,9 +61,14 @@
     "karma-phantomjs-launcher": "1.0.4",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "2.0.3",
+    "path": "0.12.7",
+    "protractor": "5.1.2",
+    "protractor-cucumber-framework": "3.1.0",
     "ts-loader": "2.0.3",
     "tslint": "5.2.0",
-    "typescript": "2.2.1"
+    "typescript": "2.2.1",
+    "wd": "1.2.0",
+    "wd-bridge": "0.0.2"
   },
   "description": "An Ionic project",
   "cordova": {
