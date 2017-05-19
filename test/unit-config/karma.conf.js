@@ -2,7 +2,7 @@ var webpackConfig = require('./webpack.test.js');
 
 module.exports = function(config) {
   var _config = {
-    basePath: '),
+    basePath: '',
 
     frameworks: ['jasmine'],
 
@@ -41,7 +41,7 @@ module.exports = function(config) {
           statements: 80,
           lines: 80,
           branches: 80,
-          functions: 80
+          functions: 60
         },
         each: { // thresholds per file
           statements: 50,

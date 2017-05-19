@@ -9,8 +9,10 @@
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
-    "test:watch": "karma start ./test-config/karma.conf.js ",
-    "test": "karma start ./test-config/karma.conf.js --single-run"
+    "test:unit:watch": "karma start ./test/unit-config/karma.conf.js ",
+    "test:unit": "karma start ./test/unit-config/karma.conf.js --single-run",
+    "test:func": "node scripts/appium-stop.js && node scripts/appium-start.js && protractor test/functional/protractor.conf.js && node scripts/appium-stop.js",
+    "test": "npm run test:unit && npm run test:func"
   },
   "dependencies": {
     "@angular/common": "4.1.0",
@@ -61,9 +63,12 @@
     "karma-phantomjs-launcher": "1.0.4",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "2.0.3",
+    "lodash": "4.17.4",
     "path": "0.12.7",
     "protractor": "5.1.2",
     "protractor-cucumber-framework": "3.1.0",
+    "ps-node": "0.1.6",
+    "tcp-port-used": "0.1.2",
     "ts-loader": "2.0.3",
     "tslint": "5.2.0",
     "typescript": "2.2.1",
