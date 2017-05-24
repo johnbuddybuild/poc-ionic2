@@ -28,7 +28,7 @@ plugins/android.json
 plugins/ios.json
 www/*
 !www/.gitkeep
-config.xml
+/config.xml
 $RECYCLE.BIN/
 output/
 
