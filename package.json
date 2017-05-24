@@ -4,6 +4,7 @@
     "author": "Camelot Global",
     "private": true,
     "scripts": {
+        "postinstall": "cp config/config.xml .",
         "clean": "ionic-app-scripts clean",
         "build": "ionic-app-scripts build",
         "lint": "ionic-app-scripts lint",
