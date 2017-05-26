@@ -52,6 +52,7 @@
         "angular2-template-loader": "0.6.2",
         "appium": "1.6.4",
         "cordova": "7.0.1",
+        "ctp-mobile-test-lib": "git+ssh://git@gitlab.camelot.global:avalon/ctp-mobile-test-lib.git#v1.0.3",
         "cucumber": "2.1.0",
         "html-loader": "0.4.5",
         "ionic": "2.2.2",

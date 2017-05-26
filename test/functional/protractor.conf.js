@@ -28,7 +28,7 @@ exports.config = {
 
   cucumberOpts: {
     require: [
-      './steps/base.js'
+      './steps/*.js'
     ],
     format: 'json:output/functional/test.json'
   },
@@ -38,6 +38,12 @@ exports.config = {
   ],
 
   baseUrl: 'http://localhost:8000',
+
+  // Make arguments accessible from within our step definitions
+  params: {
+    screens: 'compare',
+    plat: 'ios'
+  },
 
   capabilities: {
     browserName: '',
@@ -50,12 +56,10 @@ exports.config = {
     restartBrowserBetweenTests: false,
     app: path.join(__dirname, '../../platforms/ios/build/emulator/MyApp.app'),
     platformName: 'ios',
-    platformVersion: '10.2',
+    platformVersion: '10.3',
     deviceName: 'iPhone 6',
     automationName: 'XCUITest'
   },
-
-  // suites: protractorFunctionality.generateSuites(args.cust, args.pkg),
 
   onPrepare: function () {
     var wd = require('wd');
