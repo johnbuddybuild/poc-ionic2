@@ -4,8 +4,8 @@ if [ "$BUDDYBUILD_SCHEME" != "MyApp - Debug" ]; then
 else
   echo 'Executing functional tests'
 
-  npm install -g authorize-ios
-  sudo authorize-ios
+  #npm install -g authorize-ios
+  #sudo authorize-ios
 
   npm run test:func
   echo 'Functional tests should have finished'
