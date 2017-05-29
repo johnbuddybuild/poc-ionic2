@@ -1,5 +1,6 @@
 var path = require('path'),
-    Q = require('q');
+    Q = require('q'),
+    fs = require('fs');
 
 
 // Wait for wdBrowser to acquire a session to account for wd-bridge's bug which does not return
@@ -13,6 +14,8 @@ var waitForWDSession = function () {
         return Q.delay(1000).then(function () {
           return waitForWDSession();
         });
+      } else {
+        console.log('Found WD session ', result);
       }
     },
     function (error) {
@@ -65,6 +68,11 @@ exports.config = {
     var wd = require('wd');
     var protractor = require('protractor');
     var wdBridge = require('wd-bridge')(protractor, wd);
+
+    console.log('Looking for app at ' + path.join(__dirname, '../../platforms/ios/build/emulator/MyApp.app'));
+    fs.readdirSync(path.join(__dirname, '../../platforms/ios/build/emulator')).forEach(file => {
+      console.log(file);
+    });
 
     wdBridge.initFromProtractor(exports.config);
     return waitForWDSession();
