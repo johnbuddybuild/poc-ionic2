@@ -1,6 +1,6 @@
 #Only run functional tests on debug scheme
-if [ "$BUDDYBUILD_SCHEME" != "MyApp - Debug" ]; then
-  echo 'Scheme is not debug - skipping functional tests'
+if [ -z "$BUDDYBUILD_SCHEME" ]; then
+  echo 'Not an iOS build - skipping functional tests'
 else
   echo 'Executing functional tests'
 
