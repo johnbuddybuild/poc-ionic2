@@ -1,6 +1,7 @@
 var path = require('path'),
     Q = require('q'),
-    fs = require('fs');
+    fs = require('fs'),
+    execSync = require('child_process').execSync;
 
 
 // Wait for wdBrowser to acquire a session to account for wd-bridge's bug which does not return
@@ -68,6 +69,9 @@ exports.config = {
     var wd = require('wd');
     var protractor = require('protractor');
     var wdBridge = require('wd-bridge')(protractor, wd);
+
+    console.log('Creating output directory');
+    execSync('mkdir -p ' + path.join(__dirname, '../../output/functional'));
 
     console.log('Looking for app at ' + path.join(__dirname, '../../platforms/ios/build/emulator/MyApp.app'));
     fs.readdirSync(path.join(__dirname, '../../platforms/ios/build/emulator')).forEach(file => {
