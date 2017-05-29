@@ -12,5 +12,6 @@ else
   ls -la $BUDDYBUILD_WORKSPACE
   ls -la $BUDDYBUILD_WORKSPACE/output/functional
   #Covert Cucumber JSON output to JUnit XML
-  cat $BUDDYBUILD_WORKSPACE/output/functional/test.json | ./node_modules/.bin/cucumber-junit-enhance > testresults/xmloutput.xml
+  mkdir $BUDDYBUILD_WORKSPACE/testresults
+  cat $BUDDYBUILD_WORKSPACE/output/functional/test.json | ./node_modules/.bin/cucumber-junit-enhance > $BUDDYBUILD_WORKSPACE/testresults/xmloutput.xml
 fi
