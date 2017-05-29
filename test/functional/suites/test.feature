@@ -3,7 +3,7 @@ Feature: Test feature
 
   Scenario: Access menu
     When I click the menu button
-    Then I take screenshot Menu
+#    Then I take screenshot Menu
     And I wait
 
 
