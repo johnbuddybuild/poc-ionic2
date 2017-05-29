@@ -31,6 +31,7 @@ www/*
 /config.xml
 $RECYCLE.BIN/
 output/
+testresults/
 
 .DS_Store
 Thumbs.db

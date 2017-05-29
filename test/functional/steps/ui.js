@@ -1,5 +1,5 @@
 var {defineSupportCode} = require('cucumber');
-let world = require('ctp-mobile-test-lib').World;
+let world = require('./ui-world');
 
 defineSupportCode(function ({Then}) {
   Then(/^I take screenshot (.*)$/, (name) => {
