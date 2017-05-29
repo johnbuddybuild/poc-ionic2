@@ -14,4 +14,8 @@ else
   #Covert Cucumber JSON output to JUnit XML
   mkdir $BUDDYBUILD_WORKSPACE/testresults
   cat $BUDDYBUILD_WORKSPACE/output/functional/test.json | $BUDDYBUILD_WORKSPACE/node_modules/.bin/cucumber-junit-enhance > $BUDDYBUILD_WORKSPACE/testresults/xmloutput.xml
+
+  #Try copying JUnit XML in root folder
+  mkdir ./testresults
+  cp $BUDDYBUILD_WORKSPACE/testresults/xmloutput.xml ./testresults
 fi
