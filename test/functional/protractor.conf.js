@@ -73,11 +73,6 @@ exports.config = {
     console.log('Creating output directory');
     execSync('mkdir -p ' + path.join(__dirname, '../../output/functional'));
 
-    console.log('Looking for app at ' + path.join(__dirname, '../../platforms/ios/build/emulator/MyApp.app'));
-    fs.readdirSync(path.join(__dirname, '../../platforms/ios/build/emulator')).forEach(file => {
-      console.log(file);
-    });
-
     wdBridge.initFromProtractor(exports.config);
     return waitForWDSession();
 

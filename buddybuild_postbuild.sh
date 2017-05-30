@@ -8,13 +8,19 @@ else
   #sudo authorize-ios
 
   npm run test:func
-  echo 'Functional tests should have finished'
+  status=$?
+  if [ $status -ne 0 ]; then
+    echo 'Functional tests failed'
+    exit 1
+  else
+    echo 'Functional tests succeeded'
+  fi
+
   #ls -la $BUDDYBUILD_WORKSPACE
   #ls -la $BUDDYBUILD_WORKSPACE/output/functional
   #Covert Cucumber JSON output to JUnit XML
   #mkdir $BUDDYBUILD_WORKSPACE/testresults
   #cat $BUDDYBUILD_WORKSPACE/output/functional/test.json | $BUDDYBUILD_WORKSPACE/node_modules/.bin/cucumber-junit-enhance > $BUDDYBUILD_WORKSPACE/testresults/xmloutput.xml
-
   #Try copying JUnit XML in root folder
   #mkdir ./testresults
   #cp $BUDDYBUILD_WORKSPACE/testresults/xmloutput.xml ./testresults
