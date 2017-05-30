@@ -5,6 +5,7 @@ Feature: Test feature
     When I click the menu button
 #    Then I take screenshot Menu
     And I wait
+    Then I fail the test
 
 
 

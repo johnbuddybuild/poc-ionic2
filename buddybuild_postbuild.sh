@@ -9,13 +9,13 @@ else
 
   npm run test:func
   echo 'Functional tests should have finished'
-  ls -la $BUDDYBUILD_WORKSPACE
-  ls -la $BUDDYBUILD_WORKSPACE/output/functional
+  #ls -la $BUDDYBUILD_WORKSPACE
+  #ls -la $BUDDYBUILD_WORKSPACE/output/functional
   #Covert Cucumber JSON output to JUnit XML
-  mkdir $BUDDYBUILD_WORKSPACE/testresults
-  cat $BUDDYBUILD_WORKSPACE/output/functional/test.json | $BUDDYBUILD_WORKSPACE/node_modules/.bin/cucumber-junit-enhance > $BUDDYBUILD_WORKSPACE/testresults/xmloutput.xml
+  #mkdir $BUDDYBUILD_WORKSPACE/testresults
+  #cat $BUDDYBUILD_WORKSPACE/output/functional/test.json | $BUDDYBUILD_WORKSPACE/node_modules/.bin/cucumber-junit-enhance > $BUDDYBUILD_WORKSPACE/testresults/xmloutput.xml
 
   #Try copying JUnit XML in root folder
-  mkdir ./testresults
-  cp $BUDDYBUILD_WORKSPACE/testresults/xmloutput.xml ./testresults
+  #mkdir ./testresults
+  #cp $BUDDYBUILD_WORKSPACE/testresults/xmloutput.xml ./testresults
 fi

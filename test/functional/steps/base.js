@@ -10,4 +10,10 @@ defineSupportCode(function({Given}) {
   Given(/^I wait$/, () => {
     return browser.driver.sleep(1000);
   })
+
+  Given(/^I fail the test$/, () => {
+    return new Promise((resolve, reject) => {
+      reject('Simulating functional test failure')
+    })
+  })
 });
