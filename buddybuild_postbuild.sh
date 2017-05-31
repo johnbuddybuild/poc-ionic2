@@ -16,6 +16,8 @@ else
     echo 'Functional tests succeeded'
   fi
 
+  mkdir $BUDDYBUILD_CUSTOM_TEST_RESULTS
+  
   ls -la $BUDDYBUILD_CUSTOM_TEST_RESULTS
   ls -la $BUDDYBUILD_CUSTOM_TEST_RESULTS/output/functional
   Covert Cucumber JSON output to JUnit XML
