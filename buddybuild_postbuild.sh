@@ -16,12 +16,12 @@ else
     echo 'Functional tests succeeded'
   fi
 
-  #ls -la $BUDDYBUILD_WORKSPACE
-  #ls -la $BUDDYBUILD_WORKSPACE/output/functional
-  #Covert Cucumber JSON output to JUnit XML
-  #mkdir $BUDDYBUILD_WORKSPACE/testresults
-  #cat $BUDDYBUILD_WORKSPACE/output/functional/test.json | $BUDDYBUILD_WORKSPACE/node_modules/.bin/cucumber-junit-enhance > $BUDDYBUILD_WORKSPACE/testresults/xmloutput.xml
-  #Try copying JUnit XML in root folder
-  #mkdir ./testresults
-  #cp $BUDDYBUILD_WORKSPACE/testresults/xmloutput.xml ./testresults
+  ls -la $BUDDYBUILD_CUSTOM_TEST_RESULTS
+  ls -la $BUDDYBUILD_CUSTOM_TEST_RESULTS/output/functional
+  Covert Cucumber JSON output to JUnit XML
+  mkdir $BUDDYBUILD_CUSTOM_TEST_RESULTS/testresults
+  cat $BUDDYBUILD_CUSTOM_TEST_RESULTS/output/functional/test.json | $BUDDYBUILD_CUSTOM_TEST_RESULTS/node_modules/.bin/cucumber-junit-enhance > $BUDDYBUILD_WORKSPACE/testresults/xmloutput.xml
+  Try copying JUnit XML in root folder
+  mkdir ./testresults
+  cp $BUDDYBUILD_CUSTOM_TEST_RESULTS/testresults/xmloutput.xml ./testresults
 fi
