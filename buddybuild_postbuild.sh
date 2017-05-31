@@ -1,3 +1,8 @@
+mkdir $BUDDYBUILD_CUSTOM_TEST_RESULTS
+
+source .ctpinit
+npm run test:unit
+
 #Only run functional tests on debug scheme
 if [ -z "$BUDDYBUILD_SCHEME" ]; then
   echo 'Not an iOS build - skipping functional tests'
@@ -16,14 +21,14 @@ else
     echo 'Functional tests succeeded'
   fi
 
-  mkdir $BUDDYBUILD_CUSTOM_TEST_RESULTS
-  
   ls -la $BUDDYBUILD_CUSTOM_TEST_RESULTS
-  ls -la $BUDDYBUILD_CUSTOM_TEST_RESULTS/output/functional
-  Covert Cucumber JSON output to JUnit XML
+
+  #Convert Cucumber JSON output to JUnit XML
   mkdir $BUDDYBUILD_CUSTOM_TEST_RESULTS/testresults
-  cat $BUDDYBUILD_CUSTOM_TEST_RESULTS/output/functional/test.json | $BUDDYBUILD_CUSTOM_TEST_RESULTS/node_modules/.bin/cucumber-junit-enhance > $BUDDYBUILD_WORKSPACE/testresults/xmloutput.xml
-  Try copying JUnit XML in root folder
+
+  cat output/functional/test.json | node_modules/.bin/cucumber-junit-enhance > $BUDDYBUILD_CUSTOM_TEST_RESULTS/testresults/xmloutput.xml
+  #Try copying JUnit XML in root folder
   mkdir ./testresults
   cp $BUDDYBUILD_CUSTOM_TEST_RESULTS/testresults/xmloutput.xml ./testresults
+  ls -la $BUDDYBUILD_CUSTOM_TEST_RESULTS/testresults
 fi
