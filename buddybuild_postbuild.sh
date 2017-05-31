@@ -1,8 +1,5 @@
 mkdir $BUDDYBUILD_CUSTOM_TEST_RESULTS
 
-source .ctpinit
-npm run test:unit
-
 #Only run functional tests on debug scheme
 if [ -z "$BUDDYBUILD_SCHEME" ]; then
   echo 'Not an iOS build - skipping functional tests'

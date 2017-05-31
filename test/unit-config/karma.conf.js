@@ -31,7 +31,12 @@ module.exports = function(config) {
       terminal: true
     },
 
-    reporters: ['kjhtml', 'dots', 'coverage-istanbul'],
+    reporters: ['kjhtml', 'dots', 'coverage-istanbul','junit'],
+
+    junitReporter: {
+      outputDir: '../../buddybuild_artifacts/Karma'
+    },
+
     coverageIstanbulReporter: {
       reports: [ 'html', 'text-summary' ],
       fixWebpackSourcePaths: true,
